@@ -6,6 +6,8 @@ function Greeting() {
   const dispatch = useDispatch();
   const greetings = useSelector((state) => state.greetings.greetings);
 
+  console.log('Greetings')
+
   useEffect(() => {
     if (greetings.length === 0) {
       dispatch(getGreetings());
@@ -14,7 +16,7 @@ function Greeting() {
 
   return (
     <div className="countries-grid">
-    { greetings.map((greeting) => <p>{greeting.message}</p>) }
+    <p>{greetings.message}</p>
   </div>
   );
 }
