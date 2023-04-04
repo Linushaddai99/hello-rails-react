@@ -1,6 +1,6 @@
 class Api::V1::GreetingsController < ApplicationController
   def index
-    @greetings = Greeting.all.sample
-    render json: @greetings
+    greetings = Greeting.order('Random()').first
+    render json: greetings
   end
 end
